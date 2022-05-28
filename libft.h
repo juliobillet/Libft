@@ -6,18 +6,21 @@
 /*   By: jbillet <jbillet@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 08:02:30 by jbillet           #+#    #+#             */
-/*   Updated: 2022/05/27 20:23:45 by jbillet          ###   ########.fr       */
+/*   Updated: 2022/05/28 09:31:58 by jbillet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+// INCLUDES OF NEEDED LIBRARIES
 # include <unistd.h>
 # include <stdlib.h>
 
+// DEFINES
 # define INT_MIN	(-2147483648)
 
+// PROTOTYPES - PART 1
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -42,6 +45,7 @@ int		ft_atoi(const char *nptr);
 char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t nmemb, size_t size);
 
+// PROTOTYPES - PART 2
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);

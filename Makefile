@@ -6,7 +6,7 @@
 #    By: jbillet <jbillet@student.42sp.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/08 23:35:07 by jbillet           #+#    #+#              #
-#    Updated: 2022/05/27 20:27:45 by jbillet          ###   ########.fr        #
+#    Updated: 2022/05/28 09:34:02 by jbillet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,18 +49,30 @@ OBJS = ${SRCS:.c=.o}
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+RESET = \033[0m
+GREEN = \033[0;32m
+YELLOW = \033[0;33m
+CYAN = \033[0;36m
 
 %.o: %.c
+		@echo "${CYAN}Compiling${RESET} ${YELLOW}$<${RESET}"
 		${CC} ${CFLAGS} -c $< -o $@
+		@echo "${YELLOW}$<${RESET} ${GREEN}Compiled successfully!${RESET}"
 
 ${NAME} : ${OBJS}
+		@echo "${CYAN}Creating${RESET} ${YELLOW}$@${RESET}"
 		ar rcs $@ $^
+		@echo "${YELLOW}$@${RESET} ${GREEN}Created successfully!${RESET}"
 
 clean :
+		@echo "${CYAN}Applying${RESET} ${YELLOW}$@${RESET}"
 		rm -rf ${OBJS}
+		@echo "${YELLOW}$@${RESET} ${GREEN}Applied successfully!${RESET}"
 
 fclean : clean
+		@echo "${CYAN}Applying${RESET} ${YELLOW}$@${RESET}"
 		rm -rf ${NAME}
+		@echo "${YELLOW}$@${RESET} ${GREEN}Applied successfully!${RESET}"
 
 all : ${OBJS} ${NAME}
 
